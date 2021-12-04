@@ -15,9 +15,14 @@
     height: 240px;
     display: flex;
     flex-direction: column;
-    // overflow-y: scroll;
+    overflow-y: scroll;
   }
-
+  .cart-empty {
+    font-size: 20px;
+    font-family: inherit;
+    padding: 50px;
+    color: grey;
+  }
   button {
     margin-top: auto;
   }

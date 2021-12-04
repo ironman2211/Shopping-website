@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Homepage from './pages/home-page/homepage.comonent';
 import ShopPages from './pages/shop-page/shop-page.jsx';
+import CheckOutpage from './pages/check-out.page/check-outpage.component';
 import SignINandOUT from './pages/sign-in-signout-page/sign-in-and-out-page';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/header-component/header-component.jsx';
@@ -40,7 +41,7 @@ class App extends React.Component {
         <Routes>
           <Route exact path="/" element={<Homepage />}></Route>
           <Route exact path="/shop" element={<ShopPages />}></Route>
-
+          <Route exact path="/checkout" element={<CheckOutpage />}></Route>
           <Route
             exact
             path="/sign-in"
