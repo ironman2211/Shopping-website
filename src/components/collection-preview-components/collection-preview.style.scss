@@ -9,7 +9,17 @@
   }
 
   .preview {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    @media (max-width: 997px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 420px) {
+      grid-template-columns: 1fr;
+    }
   }
 }

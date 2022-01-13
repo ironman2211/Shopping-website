@@ -1,5 +1,8 @@
 .sign-in-outpage {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 70px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
