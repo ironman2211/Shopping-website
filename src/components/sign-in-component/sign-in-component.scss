@@ -1,8 +1,11 @@
 .sign-in {
   padding: 0px;
-  width: 100%;
+  width: 33vw;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
   h1 {
-    color: rgb(75, 74, 74);
+    color: rgb(56, 46, 46);
   }
   span {
     font-size: 15px;
