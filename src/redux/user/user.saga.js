@@ -102,7 +102,7 @@ export default function* userSaga() {
     call(onEmailSignInStart),
     call(onUserPersist),
     call(onUserSignOut),
-    call(onSignUpStart),
-    call(onSignUpSuccess)
+    // call(onSignUpStart),
+    // call(onSignUpSuccess)
   ]);
 }
