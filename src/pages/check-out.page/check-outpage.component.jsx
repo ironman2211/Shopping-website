@@ -8,7 +8,7 @@ import StripeCheckoutButton from '../../components/check-out/checkout-comonent.j
 const CheckOutpage = ({ cartItems, total }) => (
   <div className="checkout-page">
     <div className="checkout-header">
-      <div className="header-block">Product</div>
+      <div className="header-block">Product</div>$PSVersionTable.PSVersion
       <div className="header-block">Description</div>
       <div className="header-block">Quantity</div>
       <div className="header-block">Price</div>

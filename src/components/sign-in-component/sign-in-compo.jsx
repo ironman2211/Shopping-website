@@ -2,6 +2,9 @@ import React from 'react';
 import './sign-in-component.scss';
 import Button from '../Custom-button/custom-btn.jsx';
 import InputForm from '../input-label/input-label.jsx';
+import {emailSigninStart} from '../../redux/user/user-action'
+import {connect} from 'react-redux'
+import {googleSigninStart} from '../../redux/user/user-action';
 
 class SignIN extends React.Component {
   constructor(props) {
@@ -12,18 +15,21 @@ class SignIN extends React.Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit =async  e => {
     e.preventDefault();
-
-    this.setState({ email: '', password: '' });
+    const {emailSignInStart} =this.props;
+    const { email, password }=this.state;
+    emailSignInStart(email,password)
+    
   };
   handleChange = e => {
     const { value, name } = e.target;
-
+ 
     this.setState({ [name]: value });
   };
 
   render() {
+    const {googleSignIn} =this.props;
     return (
       <div className="sign-in">
         <h1>Alredy Have An Account</h1>
@@ -35,7 +41,7 @@ class SignIN extends React.Component {
             value={this.state.email}
             label="Email"
             handleChange={this.handleChange}
-            autocomplete="on"
+          
           />
 
           <InputForm
@@ -44,14 +50,24 @@ class SignIN extends React.Component {
             value={this.state.password}
             label="Password"
             handleChange={this.handleChange}
-            autocomplete="on"
+        
           />
+           
           <div className="buttons">
             <Button type="submit">Log-in</Button>
+            <Button type="button" onClick={googleSignIn} issigninWithGoogle>
+           
+           SignIn with google
+         </Button>
           </div>
         </form>
       </div>
     );
   }
 }
-export default SignIN;
+const mapDispatchToProps=dispatch=>({
+  emailSignInStart:(email,password)=>dispatch(emailSigninStart({email,password})),
+  googleSignIn:()=>dispatch(googleSigninStart())
+})
+
+export default connect(null,mapDispatchToProps)(SignIN);

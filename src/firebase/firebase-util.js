@@ -48,6 +48,14 @@ export const addCollectionAndDocumnets = async (
   });
   return await batch.commit();
 };
+export const getCurrentUser=()=>{
+  return new Promise((resolve,reject)=>{
+    const unsubscrib=auth.onAuthStateChanged(userAuth=>{
+      unsubscrib();
+      resolve(userAuth);
+    },reject)
+  })
+}
 export const collectionSnapshotobjMap = snapshot => {
   const newObject = snapshot.docs.map(doc => {
     const { title, items } = doc.data();
@@ -67,8 +75,8 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signinWithGoogle = () => auth.signInWithPopup(provider);
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
+
 
 export default firebase;
