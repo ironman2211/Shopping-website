@@ -15,11 +15,6 @@ export function* fetchCollectionStartAsync() {
   } catch (error) {
     yield put(fetchCollectionFailure(error));
   }
-
-  //
-  //
-  //       dispatch(fetchCollectionSuccess(collectionMap))
-  //   }).catch(err=>dispatch(fetchCollectionFailure(err)))
 }
 export function* fetchCollectionStart() {
   yield takeEvery(

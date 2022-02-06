@@ -90,11 +90,11 @@ export function* onUserSignOut() {
   yield takeLatest(userType.SIGN_OUT_START, userSignOut);
 }
 export function* onSignUpStart() {
-  yield takeLatest(userType.SIGN_UP_START, signUp);
+  yield takeLatest(userType.SIGNING_UP_START, signUp);
 }
 
 export function* onSignUpSuccess() {
-  yield takeLatest(userType.SIGN_UP_SUCCESS, signInAfterSignUp);
+  yield takeLatest(userType.SIGNING_UP_SUCCESS, signInAfterSignUp);
 }
 export default function* userSaga() {
   yield all([
@@ -102,7 +102,7 @@ export default function* userSaga() {
     call(onEmailSignInStart),
     call(onUserPersist),
     call(onUserSignOut),
-    // call(onSignUpStart),
-    // call(onSignUpSuccess)
+    call(onSignUpStart),
+    call(onSignUpSuccess)
   ]);
 }

@@ -30,15 +30,18 @@ export const signOutFailure=(err)=>({
   type:userType.SIGN_OUT_FAILURE,
   payload:err,
 })
+
+
+
 export const signUpStart=(userCredential)=>({
-  type:userType.SIGN_UP_START,
+  type:userType.SIGNING_UP_START,
   payload:userCredential
 })
 export const signUpSucess=({user,additionalData})=>({
-  type:userType.SIGN_UP_SUCCESS,
+  type:userType.SIGNING_UP_SUCCESS,
   payload:{user,additionalData}
 })
 export const signUpFailure=(err)=>({
-  type:userType.SIGN_UP_FAILURE,
+  type:userType.SIGNING_UP_FAILURE,
   payload:err,
 })

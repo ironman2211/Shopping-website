@@ -20,7 +20,7 @@ const userReduser = (state = INITIAL_STATE, action) => {
       };
     case userType.SIGNIN_FAILURE:
     case userType.SIGN_OUT_FAILURE:
-    case userType.SIGN_UP_FAILURE:
+    case userType.SIGNING_UP_FAILURE:
       return {
         ...state,
         errmessage: action.payload,
