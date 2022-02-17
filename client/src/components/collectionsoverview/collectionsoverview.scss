@@ -1,4 +1,9 @@
 .collection-overview {
   display: flex;
   flex-direction: column;
+  .title {
+    font-size: 38px;
+    margin: 0 auto 30px;
+  }
+ 
 }

@@ -13,6 +13,7 @@ const ShopPages = lazy(() => import("./pages/shop-page/shop-page.jsx"));
 const CheckOutpage = lazy(() =>
   import("./pages/check-out.page/check-outpage.component")
 );
+const Contact =lazy(()=>import("./components/contacts.component/contacts.component"))
 const SignINandOUT = lazy(() =>
   import("./pages/sign-in-signout-page/sign-in-and-out-page.jsx")
 );
@@ -37,6 +38,7 @@ class App extends React.Component {
               <Route exact path="/" component={Homepage} />
               <Route path="/shop" component={ShopPages} />
               <Route exact path="/checkout" component={CheckOutpage} />
+              <Route exact path="/contact" component={Contact}/>
               <Route
                 exact
                 path="/sign-in"

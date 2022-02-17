@@ -19,7 +19,7 @@ const Header = ({ currentuser, hidden ,signOutStart}) => (
       <Link to="/shop" className="option">
         SHOP
       </Link>
-      <Link to="/" className="option">
+      <Link to="/contact" className="option">
         CONTACT
       </Link>
 
