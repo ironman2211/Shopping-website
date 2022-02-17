@@ -11,4 +11,4 @@ const CartIteam=({item:{imageUrl,name,price,quantity}}) =>(
     </div>
 )
 
-export default CartIteam;
+export default React.memo(CartIteam);
